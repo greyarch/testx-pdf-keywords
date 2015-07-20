@@ -1,0 +1,30 @@
+{
+  "name": "testx-pdf-keywords",
+  "version": "0.1.0",
+  "description": "Keywords to test pdf files using the testx library.",
+  "main": "index.coffee",
+  "dependencies": {
+    "coffee-errors": "^0.8.6",
+    "download-pdf": "^0.1.6",
+    "lodash": "^3.8.0",
+    "pdf-text": "^0.4.0",
+    "q": "^1.4.1"
+  },
+  "devDependencies": {
+    "coffee-script": "^1.9.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://www.github.com/greyarch/testx-pdf-keywords.git"
+  },
+  "keywords": [
+    "pdf",
+    "test",
+    "testx"
+  ],
+  "author": "Greyarch BV",
+  "license": "ISC"
+}
