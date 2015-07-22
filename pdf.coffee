@@ -22,5 +22,5 @@ module.exports =
     deferred = q.defer()
     pdfText file, (err, chunks) ->
       deferred.reject err if err
-      deferred.resolve chunks.join('')
+      deferred.resolve chunks.join(' ').replace(/\s+/, ' ')
     deferred.promise
