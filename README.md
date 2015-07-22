@@ -19,9 +19,9 @@ testx.addKeywords(require('testx-pdf-keywords'))
 
 | Keyword                | Argument name | Argument value  | Description | Supports repeating arguments |
 | ---------------------- | ------------- | --------------- |------------ | ---------------------------- |
-| check text in pdf      |               |                 | download the pdf at the given url and checks that the specified text exists in it |  |
-|                        | url           | URL of the pdf file || No |
-|                        | expect1       | expected text to find in the pdf || Yes |
-| check text not in pdf  |               |                 | download the pdf at the given url and checks that specified text is not in it |  |
-|                        | url      | URL of the pdf file || No |
-|                        | expect1       | expected text to NOT find in the pdf || Yes |
+| check text in pdf      |               |                 | check that the specified text exists in the PDF file |  |
+|                        | file           | full path to the pdf file; one of *file*, *url* or *link* has to be specified || No |
+|                        | url           | URL of the pdf file; one of *file*, *url* or *link* has to be specified || No |
+|                        | link           | link to the pdf file; one of *file*, *url* or *link* has to be specified || No |
+|                        | expect1(2, 3...) | expected text to find in the pdf || Yes |
+| check text not in pdf  |               |                 | same as *check text in pdf*, but checks that the specified text is NOT in |  |
