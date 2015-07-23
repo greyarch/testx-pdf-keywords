@@ -1,9 +1,10 @@
 pdf = require './pdf'
 _ = require 'lodash'
+el = require('testx').element
 
 expectText = (matcher) ->
   (args) ->
-    expecteds = _.omit(args, ['file', 'url', 'link'])
+    expecteds = _.omit(args, ['file', 'url', 'link', 'timeout'])
     if args.file
       pdf.getText(args.file)
       .then(matcher expecteds)
@@ -12,7 +13,12 @@ expectText = (matcher) ->
       .then(pdf.getText)
       .then(matcher expecteds)
     else if args.link
-      console.warn 'The "link" parameter is not supported yet.'
+      link = el(args.link)
+      link.wait(parseInt(args.timeout || 5000))
+      link.getAttribute('href')
+      .then(pdf.download)
+      .then(pdf.getText)
+      .then(matcher expecteds)
     else
       throw new Error 'One of "file", "url" or "link" parameters has to be set in order to use this keyword.'
 
@@ -27,5 +33,5 @@ toMatch = (match = true) -> (expecteds) ->
         expect(text).not.toMatch expected
 
 module.exports =
-  'check text in pdf': expectText(toMatch true)
-  'check text not in pdf': expectText(toMatch false)
+  'check in pdf': expectText(toMatch true)
+  'check not in pdf': expectText(toMatch false)
