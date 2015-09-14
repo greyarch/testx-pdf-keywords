@@ -1,4 +1,4 @@
-testx-pop3-keywords
+testx-pdf-keywords
 =====
 
 A library that extends testx with keywords for testing PDF files. This library is packaged as a npm package
