@@ -25,9 +25,7 @@ expectText = (matcher) ->
 
 toMatch = (match = true) -> (expecteds) ->
   (text) ->
-    console.log 'expecteds:', expecteds
     for key, expected of expecteds
-      console.log 'expected:', expected
       if match
         expect(text).toMatch expected
       else
