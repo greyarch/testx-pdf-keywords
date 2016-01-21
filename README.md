@@ -1,3 +1,6 @@
+THIS PACKAGE IS DEPRECATED. PLEASE USE [testx-file-keywords](https://github.com/testxio/testx-file-keywords).
+===
+
 testx-pdf-keywords
 =====
 
